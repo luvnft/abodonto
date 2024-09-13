@@ -10,8 +10,16 @@ import {
   Star,
 } from "lucide-react";
 import Link from "next/link";
+import client from "../lib/graphQLClient";
+import pageQuery from "./queries/page.graphql";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const { data } = await client.query({
+    query: pageQuery,
+    variables: { slug: "home" },
+  });
+  const { hero } = data.pagina;
+
   return (
     <div className="flex flex-col min-h-[100dvh] bg-white text-black">
       <header className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6 h-14 flex items-center border-b border-[#be955f] bg-white bg-opacity-90">
@@ -59,14 +67,9 @@ export default function HomePage() {
           <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
             <div className="max-w-3xl text-white">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none mb-6">
-                Seu Sorriso, Nossa Paixão
+                {hero.titulo}
               </h1>
-              <p className="max-w-[600px] text-xl mb-8">
-                Experimente um atendimento odontológico de primeira classe com
-                nossa equipe de profissionais especializados. Estamos
-                comprometidos em proporcionar o sorriso saudável e bonito que
-                você merece.
-              </p>
+              <p className="max-w-[600px] text-xl mb-8">{hero.texto}</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300">
                   Agendar Consulta

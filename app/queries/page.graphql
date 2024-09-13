@@ -1,0 +1,9 @@
+query Page($slug: String!) {
+  pagina(where: { slug: $slug }) {
+    hero {
+      titulo
+      texto
+      video
+    }
+  }
+}
