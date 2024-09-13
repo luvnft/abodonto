@@ -12,6 +12,7 @@ import {
 import Link from "next/link";
 import client from "../lib/graphQLClient";
 import pageQuery from "./queries/page.graphql";
+import Image from "next/image";
 
 export default async function HomePage() {
   const { data } = await client.query({
@@ -24,10 +25,13 @@ export default async function HomePage() {
     <div className="flex flex-col min-h-[100dvh] bg-white text-black">
       <header className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6 h-14 flex items-center border-b border-[#be955f] bg-white bg-opacity-90">
         <Link className="flex items-center justify-center" href="#">
-          <Smile className="h-6 w-6 text-[#be955f]" />
-          <span className="ml-2 text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
-            Anderson Betioli Odontologia Avançada
-          </span>
+          <Image
+            src="/logo2.png"
+            alt="Anderson Betioli Odontologia Avançada"
+            width={200}
+            height={200}
+            className="overflow-hidden"
+          />
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link
@@ -52,18 +56,7 @@ export default async function HomePage() {
       </header>
       <main className="flex-1">
         <section className="relative w-full h-screen overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute top-0 left-0 w-full h-full object-cover"
-            aria-hidden="true"
-          >
-            <source src="/placeholder.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+          <div className="absolute inset-0 bg-black"></div>
           <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
             <div className="max-w-3xl text-white">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none mb-6">

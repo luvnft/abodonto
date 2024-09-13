@@ -9,6 +9,9 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    domains: ["media.graphcms.com", "media.graphassets.com"],
+  },
 };
 
 export default nextConfig;

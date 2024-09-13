@@ -3,7 +3,6 @@ query Page($slug: String!) {
     hero {
       titulo
       texto
-      video
     }
   }
 }
