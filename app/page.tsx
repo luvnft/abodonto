@@ -1,100 +1,406 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  ChevronRight,
+  Clock,
+  Scissors,
+  Shield,
+  Smile,
+  Sparkles,
+  Star,
+} from "lucide-react";
+import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="flex flex-col min-h-[100dvh] bg-white text-black">
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6 h-14 flex items-center border-b border-[#be955f] bg-white bg-opacity-90">
+        <Link className="flex items-center justify-center" href="#">
+          <Smile className="h-6 w-6 text-[#be955f]" />
+          <span className="ml-2 text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
+            Anderson Betioli Odontologia Avançada
+          </span>
+        </Link>
+        <nav className="ml-auto flex gap-4 sm:gap-6">
+          <Link
+            className="text-sm font-medium hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#be955f] to-[#e2c08d] transition-colors duration-300"
+            href="#servicos"
           >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Serviços
+          </Link>
+          <Link
+            className="text-sm font-medium hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#be955f] to-[#e2c08d] transition-colors duration-300"
+            href="#sobre"
           >
-            Read our docs
-          </a>
-        </div>
+            Sobre
+          </Link>
+          <Link
+            className="text-sm font-medium hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#be955f] to-[#e2c08d] transition-colors duration-300"
+            href="#contato"
+          >
+            Contato
+          </Link>
+        </nav>
+      </header>
+      <main className="flex-1">
+        <section className="relative w-full h-screen overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            aria-hidden="true"
+          >
+            <source src="/placeholder.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+          <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
+            <div className="max-w-3xl text-white">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none mb-6">
+                Seu Sorriso, Nossa Paixão
+              </h1>
+              <p className="max-w-[600px] text-xl mb-8">
+                Experimente um atendimento odontológico de primeira classe com
+                nossa equipe de profissionais especializados. Estamos
+                comprometidos em proporcionar o sorriso saudável e bonito que
+                você merece.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button className="bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300">
+                  Agendar Consulta
+                </Button>
+                <Button
+                  className="bg-transparent text-white border border-white hover:bg-white hover:text-black transition-all duration-300"
+                  variant="outline"
+                >
+                  Saiba Mais
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          id="servicos"
+          className="w-full py-12 md:py-24 lg:py-32 bg-white"
+        >
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
+                  Nossos Serviços
+                </h2>
+                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Oferecemos uma ampla gama de serviços odontológicos para
+                  melhorar seu sorriso e manter sua saúde bucal.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+              <img
+                alt="Procedimento de implante dentário"
+                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                height="400"
+                src="/placeholder.svg"
+                width="600"
+              />
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <Smile className="w-4 h-4 text-[#be955f]" />
+                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
+                      Implantes
+                    </h3>
+                  </div>
+                  <p className="text-gray-400">
+                    Restaure seu sorriso com nossas soluções avançadas de
+                    implantes dentários. Nossos implantes oferecem uma
+                    substituição permanente e natural para dentes ausentes,
+                    melhorando tanto a função quanto a estética.
+                  </p>
+                </div>
+                <ul className="space-y-2 text-gray-400">
+                  <li>• Solução duradoura e resistente</li>
+                  <li>• Preserva a saúde do osso maxilar</li>
+                  <li>• Melhora a fala e a capacidade de mastigação</li>
+                  <li>• Aprimora a estrutura facial</li>
+                </ul>
+                <Button className="w-fit bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300">
+                  Saiba Mais Sobre Implantes
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+              <div className="flex flex-col justify-center space-y-4 lg:order-last">
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <Smile className="w-4 h-4 text-[#be955f]" />
+                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
+                      Facetas
+                    </h3>
+                  </div>
+                  <p className="text-gray-600">
+                    Transforme seu sorriso com nossas facetas de porcelana
+                    personalizadas. Projetadas para melhorar a aparência dos
+                    seus dentes, nossas facetas aumentam sua confiança e
+                    proporcionam um sorriso digno de Hollywood.
+                  </p>
+                </div>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Corrige descoloração, lascas e desalinhamentos</li>
+                  <li>• Procedimento minimamente invasivo</li>
+                  <li>• Resultados com aparência natural</li>
+                  <li>• Resistente a manchas e duradouro</li>
+                </ul>
+                <Button className="w-fit bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300">
+                  Descubra as Facetas
+                </Button>
+              </div>
+              <img
+                alt="Antes e depois de facetas dentárias"
+                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                height="400"
+                src="/placeholder.svg"
+                width="600"
+              />
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+              <img
+                alt="Procedimento de clareamento dental"
+                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                height="400"
+                src="/placeholder.svg"
+                width="600"
+              />
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <Sparkles className="w-4 h-4 text-[#be955f]" />
+                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
+                      Clareamento
+                    </h3>
+                  </div>
+                  <p className="text-gray-400">
+                    Ilumine seu sorriso com nossos tratamentos profissionais de
+                    clareamento dental. Nossos serviços de clareamento removem
+                    manchas e descoloração, proporcionando um sorriso branco e
+                    deslumbrante que ilumina o ambiente.
+                  </p>
+                </div>
+                <ul className="space-y-2 text-gray-400">
+                  <li>• Resultados rápidos e eficazes</li>
+                  <li>• Procedimento seguro e confortável</li>
+                  <li>• Planos de tratamento personalizados</li>
+                  <li>• Efeitos duradouros com cuidados adequados</li>
+                </ul>
+                <Button className="w-fit bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300">
+                  Explore o Clareamento Dental
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+              <div className="flex flex-col justify-center space-y-4 lg:order-last">
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <Scissors className="w-4 h-4 text-[#be955f]" />
+                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
+                      Gengivoplastia
+                    </h3>
+                  </div>
+                  <p className="text-gray-600">
+                    Aprimore a linha da sua gengiva com nossos procedimentos de
+                    contorno gengival. A gengivoplastia melhora a estética do
+                    seu sorriso e promove uma melhor saúde bucal, remodelando e
+                    esculpindo suas gengivas.
+                  </p>
+                </div>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Corrige linhas gengivais irregulares</li>
+                  <li>• Reduz a exposição excessiva da gengiva</li>
+                  <li>• Melhora a estética geral do sorriso</li>
+                  <li>• Técnica minimamente invasiva</li>
+                </ul>
+                <Button className="w-fit bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300">
+                  Conheça a Gengivoplastia
+                </Button>
+              </div>
+              <img
+                alt="Procedimento de gengivoplastia"
+                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                height="400"
+                src="/placeholder.svg"
+                width="600"
+              />
+            </div>
+          </div>
+        </section>
+        <section
+          id="sobre"
+          className="w-full py-12 md:py-24 lg:py-32 bg-black text-white"
+        >
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
+                  Por Que Nos Escolher?
+                </h2>
+                <p className="max-w-[900px] text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Combinamos tecnologia de ponta com atendimento compassivo para
+                  proporcionar a melhor experiência odontológica possível.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12">
+              <div className="flex flex-col justify-center space-y-4">
+                <Shield className="mx-auto h-12 w-12 text-[#be955f]" />
+                <h3 className="text-xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
+                  Tecnologia Avançada
+                </h3>
+                <p className="text-sm text-center text-gray-400">
+                  Equipamentos de última geração para diagnósticos precisos e
+                  tratamentos confortáveis.
+                </p>
+              </div>
+              <div className="flex flex-col justify-center space-y-4">
+                <Clock className="mx-auto h-12 w-12 text-[#be955f]" />
+                <h3 className="text-xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
+                  Horários Convenientes
+                </h3>
+                <p className="text-sm text-center text-gray-400">
+                  Agendamento flexível para se adequar ao seu estilo de vida
+                  agitado, incluindo consultas noturnas e aos fins de semana.
+                </p>
+              </div>
+              <div className="flex flex-col justify-center space-y-4">
+                <Star className="mx-auto h-12 w-12 text-[#be955f]" />
+                <h3 className="text-xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
+                  Equipe Especializada
+                </h3>
+                <p className="text-sm text-center text-gray-400">
+                  Profissionais altamente qualificados e experientes dedicados à
+                  sua saúde bucal.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
+                  O Que Nossos Pacientes Dizem
+                </h2>
+                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Não acredite apenas em nossas palavras. Veja o que nossos
+                  pacientes satisfeitos têm a dizer sobre sua experiência
+                  conosco.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <p className="text-gray-500 italic">
+                    Sempre fiquei ansioso com consultas odontológicas, mas a
+                    equipe aqui me fez sentir muito confortável. A abordagem
+                    gentil e as técnicas modernas tornaram meu tratamento
+                    indolor!
+                  </p>
+                  <p className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
+                    - Sara Silva
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <p className="text-gray-500 italic">
+                    A equipe é incrivelmente amigável e profissional. Eles
+                    explicaram cada etapa do meu tratamento e garantiram que eu
+                    estivesse confortável durante todo o processo. Não poderia
+                    estar mais feliz com meu novo sorriso!
+                  </p>
+                  <p className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
+                    - Miguel Santos
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          id="contato"
+          className="w-full py-12 md:py-24 lg:py-32 bg-black text-white"
+        >
+          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+            <div className="space-y-3">
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
+                Pronto para o Seu Melhor Sorriso?
+              </h2>
+              <p className="mx-auto max-w-[600px] text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Agende sua consulta hoje e dê o primeiro passo em direção a um
+                sorriso mais saudável e confiante.
+              </p>
+            </div>
+            <div className="mx-auto w-full max-w-sm space-y-2">
+              <form className="flex space-x-2">
+                <Input
+                  className="flex-1 bg-white text-black placeholder-gray-500"
+                  placeholder="Digite seu e-mail"
+                  type="email"
+                />
+                <Button
+                  type="submit"
+                  className="bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300"
+                >
+                  Agendar
+                  <ChevronRight className="ml-2 h-4 w-4" />
+                </Button>
+              </form>
+              <p className="text-xs text-gray-400">
+                Entraremos em contato em até 24 horas para confirmar sua
+                consulta.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-[#be955f]">
+        <p className="text-xs text-gray-500">
+          © 2023 Anderson Betioli Odontologia Avançada. Todos os direitos
+          reservados.
+        </p>
+        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+          <Link
+            className="text-xs hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#be955f] to-[#e2c08d] transition-colors duration-300"
+            href="#"
+          >
+            Termos de Serviço
+          </Link>
+          <Link
+            className="text-xs hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#be955f] to-[#e2c08d] transition-colors duration-300"
+            href="#"
+          >
+            Privacidade
+          </Link>
+        </nav>
       </footer>
     </div>
   );
