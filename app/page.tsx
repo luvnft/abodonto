@@ -32,6 +32,7 @@ export default async function HomePage() {
             width={200}
             height={200}
             className="overflow-hidden"
+            priority={true}
           />
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
@@ -56,26 +57,37 @@ export default async function HomePage() {
         </nav>
       </header>
       <main className="flex-1">
-        <section className="relative w-full h-screen overflow-hidden">
-          <div className="absolute inset-0 bg-black"></div>
-          <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
+        <section className="bg-black w-full h-screen overflow-hidden">
+          <div className="relative mx-auto px-4 h-full items-center flex flex-col mt-40 lg:mt-auto lg:grid gap-6 lg:grid-cols-2 lg:gap-12">
             <div className="max-w-3xl text-white">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none mb-6">
                 {hero.titulo}
               </h1>
               <p className="max-w-[600px] text-xl mb-8">{hero.texto}</p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300">
-                  Agendar Consulta
-                </Button>
-                <Button
-                  className="bg-transparent text-white border border-white hover:bg-white hover:text-black transition-all duration-300"
-                  variant="outline"
-                >
-                  Saiba Mais
-                </Button>
+              <div className="flex gap-4 justify-center lg:justify-normal">
+                <Link href="#contato">
+                  <Button className="bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300">
+                    Agendar Consulta
+                  </Button>
+                </Link>
+                <Link href="#servicos">
+                  <Button
+                    className="bg-transparent text-white border border-white hover:bg-white hover:text-black transition-all duration-300"
+                    variant="outline"
+                  >
+                    Saiba Mais
+                  </Button>
+                </Link>
               </div>
             </div>
+            <Image
+              alt="Anderson Betioli"
+              className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center"
+              height="400"
+              src="/ander.jpg"
+              width="400"
+              priority={true}
+            />
           </div>
         </section>
         <section
@@ -99,7 +111,7 @@ export default async function HomePage() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <img
+              <Image
                 alt="Procedimento de implante dentário"
                 className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 height="400"
@@ -162,7 +174,7 @@ export default async function HomePage() {
                   Descubra as Facetas
                 </Button>
               </div>
-              <img
+              <Image
                 alt="Antes e depois de facetas dentárias"
                 className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 height="400"
@@ -175,7 +187,7 @@ export default async function HomePage() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <img
+              <Image
                 alt="Procedimento de clareamento dental"
                 className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 height="400"
@@ -238,7 +250,7 @@ export default async function HomePage() {
                   Conheça a Gengivoplastia
                 </Button>
               </div>
-              <img
+              <Image
                 alt="Procedimento de gengivoplastia"
                 className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 height="400"
