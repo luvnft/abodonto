@@ -3,6 +3,14 @@ query Page($slug: String!) {
     hero {
       titulo
       texto
+      image {
+        url
+      }
+      buttons {
+        text
+        url
+        variant
+      }
     }
   }
 }

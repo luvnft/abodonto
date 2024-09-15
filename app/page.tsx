@@ -1,3 +1,4 @@
+import Hero from "@/components/hero";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import client from "@/lib/graphQLClient";
@@ -57,41 +58,8 @@ export default async function HomePage() {
         </nav>
       </header>
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-black text-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <Image
-                alt="Anderson Betioli"
-                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-                height="400"
-                src="/ander.jpg"
-                width="400"
-                priority={true}
-              />
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    {hero.titulo}
-                  </h1>
-                  <p className="max-w-[600px] text-gray-400 md:text-xl">
-                    {hero.texto}
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button className="bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300">
-                    Agendar Consulta
-                  </Button>
-                  <Button
-                    className="bg-transparent text-[#be955f] border border-[#be955f] hover:bg-gradient-to-r hover:from-[#be955f] hover:to-[#e2c08d] hover:text-black transition-all duration-300"
-                    variant="outline"
-                  >
-                    Saiba Mais
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Hero hero={hero} />
+
         <section
           id="servicos"
           className="w-full py-12 md:py-24 lg:py-32 bg-white"
@@ -141,9 +109,7 @@ export default async function HomePage() {
                   <li>• Melhora a fala e a capacidade de mastigação</li>
                   <li>• Aprimora a estrutura facial</li>
                 </ul>
-                <Button className="w-fit bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300">
-                  Saiba Mais Sobre Implantes
-                </Button>
+                <Button className="w-fit">Saiba Mais Sobre Implantes</Button>
               </div>
             </div>
           </div>
@@ -172,9 +138,7 @@ export default async function HomePage() {
                   <li>• Resultados com aparência natural</li>
                   <li>• Resistente a manchas e duradouro</li>
                 </ul>
-                <Button className="w-fit bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300">
-                  Descubra as Facetas
-                </Button>
+                <Button className="w-fit">Descubra as Facetas</Button>
               </div>
               <Image
                 alt="Antes e depois de facetas dentárias"
@@ -217,9 +181,7 @@ export default async function HomePage() {
                   <li>• Planos de tratamento personalizados</li>
                   <li>• Efeitos duradouros com cuidados adequados</li>
                 </ul>
-                <Button className="w-fit bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300">
-                  Explore o Clareamento Dental
-                </Button>
+                <Button className="w-fit">Explore o Clareamento Dental</Button>
               </div>
             </div>
           </div>
@@ -248,9 +210,7 @@ export default async function HomePage() {
                   <li>• Melhora a estética geral do sorriso</li>
                   <li>• Técnica minimamente invasiva</li>
                 </ul>
-                <Button className="w-fit bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300">
-                  Conheça a Gengivoplastia
-                </Button>
+                <Button className="w-fit">Conheça a Gengivoplastia</Button>
               </div>
               <Image
                 alt="Procedimento de gengivoplastia"
@@ -377,10 +337,7 @@ export default async function HomePage() {
                   placeholder="Digite seu e-mail"
                   type="email"
                 />
-                <Button
-                  type="submit"
-                  className="bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300"
-                >
+                <Button type="submit">
                   Agendar
                   <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>

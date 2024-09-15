@@ -10,7 +10,14 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ["media.graphcms.com", "media.graphassets.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "sa-east-1.graphassets.com",
+        port: "",
+        pathname: "**",
+      },
+    ],
   },
 };
 
