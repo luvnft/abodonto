@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 
+// @ts-expect-error TODO fix it
 export default function Hero({ hero }) {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-black text-white">
