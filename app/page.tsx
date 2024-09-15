@@ -57,37 +57,39 @@ export default async function HomePage() {
         </nav>
       </header>
       <main className="flex-1">
-        <section className="bg-black w-full h-screen overflow-hidden">
-          <div className="relative mx-auto px-4 h-full items-center flex flex-col mt-40 lg:mt-auto lg:grid gap-6 lg:grid-cols-2 lg:gap-12">
-            <div className="max-w-3xl text-white">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none mb-6">
-                {hero.titulo}
-              </h1>
-              <p className="max-w-[600px] text-xl mb-8">{hero.texto}</p>
-              <div className="flex gap-4 justify-center lg:justify-normal">
-                <Link href="#contato">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-black text-white">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+              <Image
+                alt="Anderson Betioli"
+                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
+                height="400"
+                src="/ander.jpg"
+                width="400"
+                priority={true}
+              />
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                    {hero.titulo}
+                  </h1>
+                  <p className="max-w-[600px] text-gray-400 md:text-xl">
+                    {hero.texto}
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button className="bg-gradient-to-r from-[#be955f] to-[#e2c08d] text-black font-semibold hover:from-[#a17a4a] hover:to-[#d1a970] transition-all duration-300">
                     Agendar Consulta
                   </Button>
-                </Link>
-                <Link href="#servicos">
                   <Button
-                    className="bg-transparent text-white border border-white hover:bg-white hover:text-black transition-all duration-300"
+                    className="bg-transparent text-[#be955f] border border-[#be955f] hover:bg-gradient-to-r hover:from-[#be955f] hover:to-[#e2c08d] hover:text-black transition-all duration-300"
                     variant="outline"
                   >
                     Saiba Mais
                   </Button>
-                </Link>
+                </div>
               </div>
             </div>
-            <Image
-              alt="Anderson Betioli"
-              className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center"
-              height="400"
-              src="/ander.jpg"
-              width="400"
-              priority={true}
-            />
           </div>
         </section>
         <section
