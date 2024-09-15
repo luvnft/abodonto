@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import {
   ChevronRight,
   Clock,
+  DrillIcon,
   Scissors,
   Shield,
   Smile,
@@ -81,7 +82,7 @@ export default async function HomePage() {
           id="servicos"
           className="w-full py-12 md:py-24 lg:py-32 bg-white"
         >
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
@@ -96,19 +97,19 @@ export default async function HomePage() {
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <img
                 alt="Procedimento de implante dentário"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 height="400"
-                src="/placeholder.svg"
-                width="600"
+                src="/implantes.jpg"
+                width="400"
               />
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <div className="flex items-center space-x-2">
-                    <Smile className="w-4 h-4 text-[#be955f]" />
+                    <DrillIcon className="w-4 h-4 text-[#be955f]" />
                     <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
                       Implantes
                     </h3>
@@ -134,7 +135,7 @@ export default async function HomePage() {
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="flex flex-col justify-center space-y-4 lg:order-last">
                 <div className="space-y-2">
@@ -163,23 +164,23 @@ export default async function HomePage() {
               </div>
               <img
                 alt="Antes e depois de facetas dentárias"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 height="400"
-                src="/placeholder.svg"
-                width="600"
+                src="/faceta.jpg"
+                width="400"
               />
             </div>
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <img
                 alt="Procedimento de clareamento dental"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 height="400"
-                src="/placeholder.svg"
-                width="600"
+                src="/clareamento.jpg"
+                width="400"
               />
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
@@ -210,7 +211,7 @@ export default async function HomePage() {
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="flex flex-col justify-center space-y-4 lg:order-last">
                 <div className="space-y-2">
@@ -239,10 +240,10 @@ export default async function HomePage() {
               </div>
               <img
                 alt="Procedimento de gengivoplastia"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 height="400"
-                src="/placeholder.svg"
-                width="600"
+                src="/gengivoplastia.jpg"
+                width="400"
               />
             </div>
           </div>
@@ -251,7 +252,7 @@ export default async function HomePage() {
           id="sobre"
           className="w-full py-12 md:py-24 lg:py-32 bg-black text-white"
         >
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
@@ -298,7 +299,7 @@ export default async function HomePage() {
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
@@ -345,7 +346,7 @@ export default async function HomePage() {
           id="contato"
           className="w-full py-12 md:py-24 lg:py-32 bg-black text-white"
         >
-          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+          <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-transparent bg-clip-text bg-gradient-to-r from-[#be955f] to-[#e2c08d]">
                 Pronto para o Seu Melhor Sorriso?
