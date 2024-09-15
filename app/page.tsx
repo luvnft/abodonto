@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import client from "@/lib/graphQLClient";
 import {
   ChevronRight,
   Clock,
@@ -10,10 +11,9 @@ import {
   Sparkles,
   Star,
 } from "lucide-react";
-import Link from "next/link";
-import client from "../lib/graphQLClient";
-import pageQuery from "./queries/page.graphql";
 import Image from "next/image";
+import Link from "next/link";
+import pageQuery from "../queries/page.graphql";
 
 export default async function HomePage() {
   const { data } = await client.query({
