@@ -4,7 +4,7 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.(graphql|gql)/,
       exclude: /node_modules/,
-      loader: "graphql-tag/loader",
+      loader: 'graphql-tag/loader',
     });
 
     return config;
@@ -12,10 +12,10 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "sa-east-1.graphassets.com",
-        port: "",
-        pathname: "**",
+        protocol: 'https',
+        hostname: 'sa-east-1.graphassets.com',
+        port: '',
+        pathname: '**',
       },
     ],
   },

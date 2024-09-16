@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "./ui/button";
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from './ui/button';
 
 // @ts-expect-error TODO fix it
 export default function Hero({ hero }) {
@@ -30,12 +30,12 @@ export default function Hero({ hero }) {
                 (button: {
                   text: string;
                   url: string;
-                  variant: "default" | "outline";
+                  variant: 'default' | 'outline';
                 }) => (
                   <Link href={button.url} key={button.text}>
                     <Button variant={button.variant}>{button.text}</Button>
                   </Link>
-                )
+                ),
               )}
             </div>
           </div>
