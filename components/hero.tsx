@@ -5,15 +5,15 @@ import { Button } from './ui/button';
 // @ts-expect-error TODO fix it
 export default function Hero({ hero }) {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-black text-white">
+    <section className="w-full pt-12 md:pt-24 lg:pt-32  bg-[#fcf1e2] text-[#be955f]">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+        <div className="grid gap-6 lg:grid-cols-[1fr_600px] lg:gap-12 xl:grid-cols-[1fr_800px]">
           <Image
+            src={'/ander.png'}
             alt="Anderson Betioli"
-            className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-            height="400"
-            src={hero.image.url}
-            width="400"
+            height={600}
+            width={600}
+            className="mx-auto sm:w-full lg:order-last object-cover object-center"
             priority={true}
           />
           <div className="flex flex-col justify-center space-y-4">
