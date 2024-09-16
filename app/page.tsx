@@ -25,7 +25,7 @@ export default async function HomePage() {
 
   return (
     <div className="flex flex-col min-h-[100dvh] bg-white text-black">
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6 h-14 flex items-center border-b border-[#be955f] bg-white bg-opacity-90">
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6 h-14 flex items-center bg-white bg-opacity-90">
         <Link className="flex items-center justify-center" href="#">
           <Image
             src="/logo2.png"
@@ -78,7 +78,7 @@ export default async function HomePage() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-[#fcf1e2] text-[#be955f]">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <Image
@@ -117,7 +117,7 @@ export default async function HomePage() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="flex flex-col justify-center space-y-4 lg:order-last">
+              <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <div className="flex items-center space-x-2">
                     <Smile className="w-4 h-4 text-[#be955f]" />
@@ -150,7 +150,7 @@ export default async function HomePage() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-[#fcf1e2] text-[#be955f]">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <Image
@@ -189,7 +189,7 @@ export default async function HomePage() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="flex flex-col justify-center space-y-4 lg:order-last">
+              <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <div className="flex items-center space-x-2">
                     <Scissors className="w-4 h-4 text-[#be955f]" />
@@ -224,7 +224,7 @@ export default async function HomePage() {
         </section>
         <section
           id="sobre"
-          className="w-full py-12 md:py-24 lg:py-32 bg-black text-white"
+          className="w-full py-12 md:py-24 lg:py-32bg-[#fcf1e2] text-[#be955f]"
         >
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -318,7 +318,7 @@ export default async function HomePage() {
         </section>
         <section
           id="contato"
-          className="w-full py-12 md:py-24 lg:py-32 bg-black text-white"
+          className="w-full py-12 md:py-24 lg:py-32 bg-[#fcf1e2] text-[#be955f]"
         >
           <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
@@ -350,7 +350,7 @@ export default async function HomePage() {
           </div>
         </section>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-[#be955f]">
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6">
         <p className="text-xs text-gray-500">
           © 2023 Anderson Betioli Odontologia Avançada. Todos os direitos
           reservados.
