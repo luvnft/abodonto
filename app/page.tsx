@@ -83,7 +83,7 @@ export default async function HomePage() {
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <Image
                 alt="Procedimento de implante dentário"
-                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center"
                 height="400"
                 src="/implantes.jpg"
                 width="400"
@@ -142,7 +142,7 @@ export default async function HomePage() {
               </div>
               <Image
                 alt="Antes e depois de facetas dentárias"
-                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center"
                 height="400"
                 src="/faceta.jpg"
                 width="400"
@@ -155,7 +155,7 @@ export default async function HomePage() {
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <Image
                 alt="Procedimento de clareamento dental"
-                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center"
                 height="400"
                 src="/clareamento.jpg"
                 width="400"
@@ -214,7 +214,7 @@ export default async function HomePage() {
               </div>
               <Image
                 alt="Procedimento de gengivoplastia"
-                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center"
                 height="400"
                 src="/gengivoplastia.jpg"
                 width="400"
