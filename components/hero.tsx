@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 // @ts-expect-error TODO fix it
 export default function Hero({ hero }) {
   return (
-    <section className="w-full pt-12 md:pt-24 lg:pt-32 bg-gray-900 text-[#be955f]">
+    <section className="w-full pt-12 md:pt-24 lg:pt-32 bg-gray-900 text-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-[1fr_600px] lg:gap-12 xl:grid-cols-[1fr_800px]">
           <Image
