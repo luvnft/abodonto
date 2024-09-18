@@ -80,10 +80,10 @@ export default async function HomePage() {
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-[#be955f]">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-[auto_1fr_400px] md:gap-12 items-center">
               <Image
                 alt="Procedimento de implante dentário"
-                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center"
+                className="rounded-xl"
                 height="400"
                 src="/implantes.jpg"
                 width="400"
@@ -116,8 +116,8 @@ export default async function HomePage() {
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="flex flex-col justify-center space-y-4">
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-[400px_1fr_auto] md:gap-12 items-center">
+              <div className="flex flex-col justify-center space-y-4 xl:col-start-2">
                 <div className="space-y-2">
                   <div className="flex items-center space-x-2">
                     <Smile className="w-4 h-4 text-[#be955f]" />
@@ -142,7 +142,7 @@ export default async function HomePage() {
               </div>
               <Image
                 alt="Antes e depois de facetas dentárias"
-                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center"
+                className="rounded-xl xl:col-start-3"
                 height="400"
                 src="/faceta.jpg"
                 width="400"
@@ -152,10 +152,10 @@ export default async function HomePage() {
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-[#be955f]">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+            <div className="grid gap-6  md:grid-cols-2 xl:grid-cols-[auto_1fr_400px] md:gap-12 items-center">
               <Image
                 alt="Procedimento de clareamento dental"
-                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center"
+                className="rounded-xl"
                 height="400"
                 src="/clareamento.jpg"
                 width="400"
@@ -188,8 +188,8 @@ export default async function HomePage() {
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="flex flex-col justify-center space-y-4">
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-[400px_1fr_auto] md:gap-12 items-center">
+              <div className="flex flex-col justify-center space-y-4 xl:col-start-2">
                 <div className="space-y-2">
                   <div className="flex items-center space-x-2">
                     <Scissors className="w-4 h-4 text-[#be955f]" />
@@ -214,10 +214,10 @@ export default async function HomePage() {
               </div>
               <Image
                 alt="Procedimento de gengivoplastia"
-                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center"
+                className="rounded-xl xl:col-start-3 aspect-square object-cover"
+                width="400"
                 height="400"
                 src="/gengivoplastia.jpg"
-                width="400"
               />
             </div>
           </div>
