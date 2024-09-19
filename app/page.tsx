@@ -13,7 +13,6 @@ import {
   Star,
 } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import pageQuery from '../queries/page.graphql';
 
 export default async function HomePage() {
