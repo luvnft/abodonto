@@ -1,0 +1,7 @@
+query TextPage($slug: String!) {
+  textPage(where: { slug: $slug }) {
+    text {
+      html
+    }
+  }
+}
