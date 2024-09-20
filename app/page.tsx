@@ -1,6 +1,7 @@
 import Hero from '@/components/hero';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { PageQuery, Pagina } from '@/gql/graphql';
 import client from '@/lib/graphQLClient';
 import {
   ChevronRight,
@@ -16,15 +17,15 @@ import Image from 'next/image';
 import pageQuery from '../queries/page.graphql';
 
 export default async function HomePage() {
-  const { data } = await client.query({
+  const { data } = await client.query<PageQuery>({
     query: pageQuery,
     variables: { slug: 'home' },
   });
-  const { hero } = data.pagina;
+  const pagina = data.pagina as Pagina;
 
   return (
     <main className="flex-1">
-      <Hero hero={hero} />
+      <Hero hero={pagina.hero!} />
       <section
         id="servicos"
         className="w-full py-12 md:py-24 lg:py-32 bg-white"

@@ -1,8 +1,8 @@
+import { Hero } from '@/gql/graphql';
 import Link from 'next/link';
 import { Button } from './ui/button';
 
-// @ts-expect-error TODO fix it
-export default function Hero({ hero }) {
+export default function HeroComponent({ hero }: { hero: Hero }) {
   return (
     <section className="w-full h-screen flex items-center justify-center text-white">
       <video
