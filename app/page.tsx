@@ -28,7 +28,7 @@ export default async function HomePage() {
       <Hero hero={pagina.hero!} />
       <section
         id="servicos"
-        className="w-full py-12 md:py-24 lg:py-32 bg-white"
+        className="w-full py-12 md:py-24 lg:py-32 bg-black"
       >
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -44,12 +44,12 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-[#be955f]">
+      <section className="w-full py-12 md:py-24 lg:py-32 text-[#be955f]">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-[auto_1fr_400px] md:gap-12 items-center">
+          <div className="grid gap-6 md:grid-cols-2 md:gap-12 items-center">
             <Image
               alt="Procedimento de implante dentário"
-              className="rounded-xl"
+              className="rounded-xl w-full aspect-square object-cover"
               height="400"
               src="/implantes.jpg"
               width="400"
@@ -82,8 +82,8 @@ export default async function HomePage() {
       </section>
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-[400px_1fr_auto] md:gap-12 items-center">
-            <div className="flex flex-col justify-center space-y-4 xl:col-start-2">
+          <div className="grid gap-6 md:grid-cols-2 md:gap-12 items-center">
+            <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <Smile className="w-4 h-4 text-[#be955f]" />
@@ -108,7 +108,7 @@ export default async function HomePage() {
             </div>
             <Image
               alt="Antes e depois de facetas dentárias"
-              className="rounded-xl xl:col-start-3"
+              className="rounded-xl w-full aspect-square object-cover"
               height="400"
               src="/faceta.jpg"
               width="400"
@@ -116,12 +116,12 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-[#be955f]">
+      <section className="w-full py-12 md:py-24 lg:py-32 text-[#be955f]">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-6  md:grid-cols-2 xl:grid-cols-[auto_1fr_400px] md:gap-12 items-center">
+          <div className="grid gap-6  md:grid-cols-2 md:gap-12 items-center">
             <Image
               alt="Procedimento de clareamento dental"
-              className="rounded-xl"
+              className="rounded-xl w-full aspect-square object-cover"
               height="400"
               src="/clareamento.jpg"
               width="400"
@@ -154,8 +154,8 @@ export default async function HomePage() {
       </section>
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-[400px_1fr_auto] md:gap-12 items-center">
-            <div className="flex flex-col justify-center space-y-4 xl:col-start-2">
+          <div className="grid gap-6 md:grid-cols-2 md:gap-12 items-center">
+            <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <Scissors className="w-4 h-4 text-[#be955f]" />
@@ -180,7 +180,7 @@ export default async function HomePage() {
             </div>
             <Image
               alt="Procedimento de gengivoplastia"
-              className="rounded-xl xl:col-start-3 aspect-square object-cover"
+              className="rounded-xl w-full aspect-square object-cover"
               width="400"
               height="400"
               src="/gengivoplastia.jpg"
@@ -190,7 +190,7 @@ export default async function HomePage() {
       </section>
       <section
         id="sobre"
-        className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-[#be955f]"
+        className="w-full py-12 md:py-24 lg:py-32 bg-black text-[#be955f]"
       >
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -282,7 +282,7 @@ export default async function HomePage() {
       </section>
       <section
         id="contato"
-        className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-[#be955f]"
+        className="w-full py-12 md:py-24 lg:py-32 bg-black text-[#be955f]"
       >
         <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
