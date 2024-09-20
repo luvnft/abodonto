@@ -6,7 +6,7 @@ export default function Hero({ hero }) {
   return (
     <section className="w-full h-screen flex items-center justify-center text-white">
       <video
-        className="absolute h-full w-full object-cover brightness-75"
+        className="h-full w-full object-cover brightness-75"
         src="/hero.mp4"
         autoPlay
         loop
