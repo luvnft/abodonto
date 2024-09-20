@@ -12,6 +12,7 @@ export default function HeroComponent({ hero }: { hero: Hero }) {
         loop
         muted
       ></video>
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-transparent to-black/95"></div>
       <div className="absolute flex flex-col justify-center space-y-4 items-center text-center">
         <div className="space-y-2 text-center">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
