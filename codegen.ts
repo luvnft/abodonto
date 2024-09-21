@@ -2,8 +2,7 @@ import type { CodegenConfig } from '@graphql-codegen/cli';
 
 const config: CodegenConfig = {
   overwrite: true,
-  schema:
-    'https://sa-east-1.cdn.hygraph.com/content/cm0zp4v7r00k907w20tztysuh/master',
+  schema: process.env.GRAPHQL_CONTENT_ENDPOINT,
   documents: 'queries/*.graphql',
   generates: {
     'gql/': {
