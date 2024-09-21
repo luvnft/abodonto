@@ -21,11 +21,11 @@ export default async function HomePage() {
     query: pageQuery,
     variables: { slug: 'home' },
   });
-  const pagina = data.pagina as Pagina;
+  const { hero } = data.pagina as Pagina;
 
   return (
     <main className="flex-1">
-      <Hero hero={pagina.hero!} />
+      {hero && <Hero hero={hero} />}
       <section
         id="servicos"
         className="w-full py-12 md:py-24 lg:py-32 bg-black"
