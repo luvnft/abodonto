@@ -1,0 +1,13 @@
+query Menus {
+  menus(first: 1) {
+    logo {
+      url
+      width
+      height
+    }
+    links {
+      texto
+      url
+    }
+  }
+}

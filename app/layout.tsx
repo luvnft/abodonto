@@ -1,3 +1,6 @@
+import client from '@/graphql/client';
+import { Menu } from '@/graphql/gql/graphql';
+import menuQuery from '@/graphql/queries/menu.graphql';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import Image from 'next/image';
@@ -21,11 +24,16 @@ export const metadata: Metadata = {
     'Especialista em implante, estética dental (lente, faceta, clareamento), prótese dentária.',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { data } = await client.query<{ menus: Menu[] }>({
+    query: menuQuery,
+  });
+  const menu = data.menus[0];
+
   return (
     <html lang="en">
       <body
@@ -34,34 +42,27 @@ export default function RootLayout({
         <div className="flex flex-col min-h-[100dvh] bg-white text-black">
           <header className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6 h-14 flex items-center bg-white bg-opacity-90">
             <Link className="flex items-center justify-center" href="/">
-              <Image
-                src="/logo2.png"
-                alt="Anderson Betioli Odontologia Avançada"
-                width={200}
-                height={200}
-                className="overflow-hidden"
-                priority={true}
-              />
+              {menu.logo && (
+                <Image
+                  src={menu.logo.url || '/logo2.jpg'}
+                  alt="Anderson Betioli Odontologia Avançada"
+                  width={menu.logo.width || 200}
+                  height={menu.logo.height || 200}
+                  className="overflow-hidden h-auto w-[200px]"
+                  priority={true}
+                />
+              )}
             </Link>
             <nav className="ml-auto flex gap-4 sm:gap-6">
-              <Link
-                className="text-sm font-medium hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#be955f] to-[#e2c08d] transition-colors duration-300"
-                href="/#servicos"
-              >
-                Serviços
-              </Link>
-              <Link
-                className="text-sm font-medium hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#be955f] to-[#e2c08d] transition-colors duration-300"
-                href="/#sobre"
-              >
-                Sobre
-              </Link>
-              <Link
-                className="text-sm font-medium hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#be955f] to-[#e2c08d] transition-colors duration-300"
-                href="/#contato"
-              >
-                Contato
-              </Link>
+              {menu.links.map((link) => (
+                <Link
+                  key={link.texto}
+                  className="text-sm font-medium hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#be955f] to-[#e2c08d] transition-colors duration-300"
+                  href={link.url}
+                >
+                  {link.texto}
+                </Link>
+              ))}
             </nav>
           </header>
 
