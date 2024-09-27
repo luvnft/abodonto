@@ -1,4 +1,7 @@
-import { verifyWebhookSignature } from '@hygraph/utils';
+import {
+  generateWebhookSignature,
+  verifyWebhookSignature,
+} from '@hygraph/utils';
 import { revalidatePath } from 'next/cache';
 
 export async function POST(request: Request) {
@@ -13,7 +16,13 @@ export async function POST(request: Request) {
       const isValid = verifyWebhookSignature({ body, signature, secret });
 
       if (!isValid) {
-        console.log('[Next.js] Invalid signature.');
+        const generated = generateWebhookSignature({ body, secret });
+        console.log(
+          '[Next.js] Invalid signature:',
+          signature,
+          ' - Generated: ',
+          generated,
+        );
         return new Response('Invalid signature.', {
           status: 400,
         });
