@@ -53,7 +53,7 @@ export default async function RootLayout({
                 />
               )}
             </Link>
-            <nav className="ml-auto flex gap-4 sm:gap-6">
+            <nav className="ml-auto gap-4 sm:gap-6 hidden sm:flex">
               {menu.links.map((link) => (
                 <Link
                   key={link.texto}
