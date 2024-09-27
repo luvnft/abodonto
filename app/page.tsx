@@ -317,20 +317,9 @@ export default async function HomePage() {
             </p>
           </div>
           <div className="mx-auto w-full max-w-sm space-y-2">
-            <form className="flex space-x-2">
-              <Input
-                className="flex-1 bg-white text-black placeholder-gray-500"
-                placeholder="Digite seu e-mail"
-                type="email"
-              />
-              <Button type="submit">
-                Agendar
-                <ChevronRight className="ml-2 h-4 w-4" />
-              </Button>
-            </form>
-            <p className="text-xs text-gray-400">
-              Entraremos em contato em até 24 horas para confirmar sua consulta.
-            </p>
+            <Link href="https://wa.me/5544997381613?text=Olá, gostaria de agendar uma consulta">
+              <Button type="submit">Agendar consulta</Button>
+            </Link>
           </div>
         </div>
       </section>
