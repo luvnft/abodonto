@@ -1,7 +1,4 @@
-import {
-  generateWebhookSignature,
-  verifyWebhookSignature,
-} from '@hygraph/utils';
+import { verifyWebhookSignature } from '@hygraph/utils';
 import { revalidatePath } from 'next/cache';
 
 export async function POST(request: Request) {
