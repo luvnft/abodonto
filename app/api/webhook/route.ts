@@ -16,13 +16,8 @@ export async function POST(request: Request) {
       const isValid = verifyWebhookSignature({ body, signature, secret });
 
       if (!isValid) {
-        const generated = generateWebhookSignature({ body, secret });
-        console.log(
-          '[Next.js] Invalid signature:',
-          signature,
-          ' - Generated: ',
-          generated,
-        );
+        console.log('[Next.js] Invalid signature:', signature);
+        console.log('body', body);
         return new Response('Invalid signature.', {
           status: 400,
         });
