@@ -3,7 +3,7 @@ import LazyLoaderObserver from '@/components/ui/LazyLoadObserver';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import client from '@/graphql/client';
-import { PageQuery, Pagina } from '@/graphql/gql/graphql';
+import { Pagina } from '@/graphql/gql/graphql';
 import pageQuery from '@/graphql/queries/page.graphql';
 import {
   ChevronRight,
@@ -18,11 +18,13 @@ import {
 import Image from 'next/image';
 
 export default async function HomePage() {
-  const { data } = await client.query<PageQuery>({
+  const { data } = await client.query<{ pagina: Pagina }>({
     query: pageQuery,
-    variables: { slug: 'home' },
+    variables: {
+      slug: 'home',
+    },
   });
-  const { hero } = data.pagina as Pagina;
+  const { hero } = data.pagina;
 
   return (
     <main className="flex-1">

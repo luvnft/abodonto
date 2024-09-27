@@ -1,11 +1,13 @@
 import client from '@/graphql/client';
-import { TextPageQuery } from '@/graphql/gql/graphql';
+import { TextPage } from '@/graphql/gql/graphql';
 import textPageQuery from '@/graphql/queries/textPage.graphql';
 
 export default async function Page() {
-  const { data } = await client.query<TextPageQuery>({
+  const { data } = await client.query<{ textPage: TextPage }>({
     query: textPageQuery,
-    variables: { slug: 'politica-de-privacidade' },
+    variables: {
+      slug: 'politica-de-privacidade',
+    },
   });
 
   return (
