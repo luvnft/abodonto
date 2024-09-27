@@ -49,10 +49,10 @@ export default async function HomePage() {
       </section>
       <section className="w-full py-12 md:py-24 lg:py-32 text-[#be955f]">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-6 md:grid-cols-2 md:gap-12 items-center">
+          <div className="grid gap-6 md:grid-cols-2 md:gap-12 items-center justify-items-center">
             <Image
               alt="Procedimento de implante dentário"
-              className="rounded-xl w-full aspect-square object-cover"
+              className="rounded-xl w-full max-w-[400px] aspect-square object-cover"
               height="400"
               src="/implantes.jpg"
               width="400"
@@ -87,7 +87,7 @@ export default async function HomePage() {
       </section>
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-6 md:grid-cols-2 md:gap-12 items-center">
+          <div className="grid gap-6 md:grid-cols-2 md:gap-12 items-center justify-items-center">
             <LazyLoaderObserver>
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
@@ -115,7 +115,7 @@ export default async function HomePage() {
             </LazyLoaderObserver>
             <Image
               alt="Antes e depois de facetas dentárias"
-              className="rounded-xl w-full aspect-square object-cover"
+              className="rounded-xl w-full max-w-[400px] aspect-square object-cover"
               height="400"
               src="/faceta.jpg"
               width="400"
@@ -125,10 +125,10 @@ export default async function HomePage() {
       </section>
       <section className="w-full py-12 md:py-24 lg:py-32 text-[#be955f]">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-6  md:grid-cols-2 md:gap-12 items-center">
+          <div className="grid gap-6  md:grid-cols-2 md:gap-12 items-center justify-items-center">
             <Image
               alt="Procedimento de clareamento dental"
-              className="rounded-xl w-full aspect-square object-cover"
+              className="rounded-xl w-full max-w-[400px] aspect-square object-cover"
               height="400"
               src="/clareamento.jpg"
               width="400"
@@ -163,7 +163,7 @@ export default async function HomePage() {
       </section>
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-6 md:grid-cols-2 md:gap-12 items-center">
+          <div className="grid gap-6 md:grid-cols-2 md:gap-12 items-center justify-items-center">
             <LazyLoaderObserver>
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
@@ -191,7 +191,7 @@ export default async function HomePage() {
             </LazyLoaderObserver>
             <Image
               alt="Procedimento de gengivoplastia"
-              className="rounded-xl w-full aspect-square object-cover"
+              className="rounded-xl w-full max-w-[400px] aspect-square object-cover"
               width="400"
               height="400"
               src="/gengivoplastia.jpg"
