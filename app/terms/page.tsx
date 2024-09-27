@@ -1,6 +1,6 @@
-import { TextPageQuery } from '@/gql/graphql';
-import client from '@/lib/graphQLClient';
-import textPageQuery from '../../queries/textPage.graphql';
+import client from '@/graphql/client';
+import { TextPageQuery } from '@/graphql/gql/graphql';
+import textPageQuery from '@/graphql/queries/textPage.graphql';
 
 export default async function Page() {
   const { data } = await client.query<TextPageQuery>({

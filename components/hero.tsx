@@ -1,4 +1,4 @@
-import { Hero } from '@/gql/graphql';
+import { Hero } from '@/graphql/gql/graphql';
 import Link from 'next/link';
 import { Button } from './ui/button';
 

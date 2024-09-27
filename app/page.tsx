@@ -2,8 +2,9 @@ import Hero from '@/components/hero';
 import LazyLoaderObserver from '@/components/ui/LazyLoadObserver';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { PageQuery, Pagina } from '@/gql/graphql';
-import client from '@/lib/graphQLClient';
+import client from '@/graphql/client';
+import { PageQuery, Pagina } from '@/graphql/gql/graphql';
+import pageQuery from '@/graphql/queries/page.graphql';
 import {
   ChevronRight,
   Clock,
@@ -15,7 +16,6 @@ import {
   Star,
 } from 'lucide-react';
 import Image from 'next/image';
-import pageQuery from '../queries/page.graphql';
 
 export default async function HomePage() {
   const { data } = await client.query<PageQuery>({
