@@ -8,11 +8,11 @@ if (!HYGRAPH_URL) {
 const client = {
   query: async <T>(requestBody: {
     query: DocumentNode;
-    variables: { [key: string]: string };
+    variables?: { [key: string]: string };
   }): Promise<{ data: T }> => {
     const body = {
       query: requestBody.query.loc?.source.body,
-      variables: requestBody.variables,
+      variables: requestBody.variables || {},
     };
 
     const headers = {
