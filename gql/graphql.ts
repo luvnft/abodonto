@@ -196,13 +196,13 @@ export type AssetConnection = {
 export type AssetCreateInput = {
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   fileName?: InputMaybe<Scalars['String']['input']>;
-  imagemHero?: InputMaybe<HeroCreateManyInlineInput>;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: InputMaybe<AssetCreateLocalizationsInput>;
   logoMenu?: InputMaybe<MenuCreateManyInlineInput>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** Optionally the system can upload a file for you, for that you need to provide a publicly accessible url */
   uploadUrl?: InputMaybe<Scalars['String']['input']>;
+  videoHero?: InputMaybe<HeroCreateManyInlineInput>;
 };
 
 export type AssetCreateLocalizationDataInput = {
@@ -380,7 +380,6 @@ export type AssetTransformationInput = {
 
 export type AssetUpdateInput = {
   fileName?: InputMaybe<Scalars['String']['input']>;
-  imagemHero?: InputMaybe<HeroUpdateManyInlineInput>;
   /** Manage document localizations */
   localizations?: InputMaybe<AssetUpdateLocalizationsInput>;
   logoMenu?: InputMaybe<MenuUpdateManyInlineInput>;
@@ -388,6 +387,7 @@ export type AssetUpdateInput = {
   reUpload?: InputMaybe<Scalars['Boolean']['input']>;
   /** Optionally the system can upload a file for you, for that you need to provide a publicly accessible url */
   uploadUrl?: InputMaybe<Scalars['String']['input']>;
+  videoHero?: InputMaybe<HeroUpdateManyInlineInput>;
 };
 
 export type AssetUpdateLocalizationDataInput = {
@@ -1324,11 +1324,11 @@ export type Hero = Entity & {
   buttons: Array<Button>;
   /** The unique identifier */
   id: Scalars['ID']['output'];
-  image: Asset;
   /** System stage field */
   stage: Stage;
-  texto?: Maybe<Scalars['String']['output']>;
-  titulo: Scalars['String']['output'];
+  text?: Maybe<Scalars['String']['output']>;
+  title: Scalars['String']['output'];
+  video: Asset;
 };
 
 
@@ -1345,7 +1345,7 @@ export type HeroButtonsArgs = {
 };
 
 
-export type HeroImageArgs = {
+export type HeroVideoArgs = {
   forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
   locales?: InputMaybe<Array<Locale>>;
   where?: InputMaybe<AssetSingleRelationWhereInput>;
@@ -1370,9 +1370,9 @@ export type HeroConnection = {
 
 export type HeroCreateInput = {
   buttons?: InputMaybe<ButtonCreateManyInlineInput>;
-  image: AssetCreateOneInlineInput;
-  texto?: InputMaybe<Scalars['String']['input']>;
-  titulo: Scalars['String']['input'];
+  text?: InputMaybe<Scalars['String']['input']>;
+  title: Scalars['String']['input'];
+  video: AssetCreateOneInlineInput;
 };
 
 export type HeroCreateManyInlineInput = {
@@ -1433,54 +1433,54 @@ export type HeroManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>;
-  image?: InputMaybe<AssetWhereInput>;
-  texto?: InputMaybe<Scalars['String']['input']>;
+  text?: InputMaybe<Scalars['String']['input']>;
   /** All values containing the given string. */
-  texto_contains?: InputMaybe<Scalars['String']['input']>;
+  text_contains?: InputMaybe<Scalars['String']['input']>;
   /** All values ending with the given string. */
-  texto_ends_with?: InputMaybe<Scalars['String']['input']>;
+  text_ends_with?: InputMaybe<Scalars['String']['input']>;
   /** All values that are contained in given list. */
-  texto_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  text_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Any other value that exists and is not equal to the given value. */
-  texto_not?: InputMaybe<Scalars['String']['input']>;
+  text_not?: InputMaybe<Scalars['String']['input']>;
   /** All values not containing the given string. */
-  texto_not_contains?: InputMaybe<Scalars['String']['input']>;
+  text_not_contains?: InputMaybe<Scalars['String']['input']>;
   /** All values not ending with the given string */
-  texto_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  text_not_ends_with?: InputMaybe<Scalars['String']['input']>;
   /** All values that are not contained in given list. */
-  texto_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  text_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** All values not starting with the given string. */
-  texto_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  text_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   /** All values starting with the given string. */
-  texto_starts_with?: InputMaybe<Scalars['String']['input']>;
-  titulo?: InputMaybe<Scalars['String']['input']>;
+  text_starts_with?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
   /** All values containing the given string. */
-  titulo_contains?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
   /** All values ending with the given string. */
-  titulo_ends_with?: InputMaybe<Scalars['String']['input']>;
+  title_ends_with?: InputMaybe<Scalars['String']['input']>;
   /** All values that are contained in given list. */
-  titulo_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Any other value that exists and is not equal to the given value. */
-  titulo_not?: InputMaybe<Scalars['String']['input']>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
   /** All values not containing the given string. */
-  titulo_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
   /** All values not ending with the given string */
-  titulo_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  title_not_ends_with?: InputMaybe<Scalars['String']['input']>;
   /** All values that are not contained in given list. */
-  titulo_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** All values not starting with the given string. */
-  titulo_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  title_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   /** All values starting with the given string. */
-  titulo_starts_with?: InputMaybe<Scalars['String']['input']>;
+  title_starts_with?: InputMaybe<Scalars['String']['input']>;
+  video?: InputMaybe<AssetWhereInput>;
 };
 
 export enum HeroOrderByInput {
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
-  TextoAsc = 'texto_ASC',
-  TextoDesc = 'texto_DESC',
-  TituloAsc = 'titulo_ASC',
-  TituloDesc = 'titulo_DESC'
+  TextAsc = 'text_ASC',
+  TextDesc = 'text_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
 }
 
 export type HeroParent = Pagina;
@@ -1565,9 +1565,9 @@ export type HeroParentWhereUniqueInput = {
 
 export type HeroUpdateInput = {
   buttons?: InputMaybe<ButtonUpdateManyInlineInput>;
-  image?: InputMaybe<AssetUpdateOneInlineInput>;
-  texto?: InputMaybe<Scalars['String']['input']>;
-  titulo?: InputMaybe<Scalars['String']['input']>;
+  text?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  video?: InputMaybe<AssetUpdateOneInlineInput>;
 };
 
 export type HeroUpdateManyInlineInput = {
@@ -1582,8 +1582,8 @@ export type HeroUpdateManyInlineInput = {
 };
 
 export type HeroUpdateManyInput = {
-  texto?: InputMaybe<Scalars['String']['input']>;
-  titulo?: InputMaybe<Scalars['String']['input']>;
+  text?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type HeroUpdateManyWithNestedWhereInput = {
@@ -1675,45 +1675,45 @@ export type HeroWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>;
-  image?: InputMaybe<AssetWhereInput>;
-  texto?: InputMaybe<Scalars['String']['input']>;
+  text?: InputMaybe<Scalars['String']['input']>;
   /** All values containing the given string. */
-  texto_contains?: InputMaybe<Scalars['String']['input']>;
+  text_contains?: InputMaybe<Scalars['String']['input']>;
   /** All values ending with the given string. */
-  texto_ends_with?: InputMaybe<Scalars['String']['input']>;
+  text_ends_with?: InputMaybe<Scalars['String']['input']>;
   /** All values that are contained in given list. */
-  texto_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  text_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Any other value that exists and is not equal to the given value. */
-  texto_not?: InputMaybe<Scalars['String']['input']>;
+  text_not?: InputMaybe<Scalars['String']['input']>;
   /** All values not containing the given string. */
-  texto_not_contains?: InputMaybe<Scalars['String']['input']>;
+  text_not_contains?: InputMaybe<Scalars['String']['input']>;
   /** All values not ending with the given string */
-  texto_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  text_not_ends_with?: InputMaybe<Scalars['String']['input']>;
   /** All values that are not contained in given list. */
-  texto_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  text_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** All values not starting with the given string. */
-  texto_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  text_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   /** All values starting with the given string. */
-  texto_starts_with?: InputMaybe<Scalars['String']['input']>;
-  titulo?: InputMaybe<Scalars['String']['input']>;
+  text_starts_with?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
   /** All values containing the given string. */
-  titulo_contains?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
   /** All values ending with the given string. */
-  titulo_ends_with?: InputMaybe<Scalars['String']['input']>;
+  title_ends_with?: InputMaybe<Scalars['String']['input']>;
   /** All values that are contained in given list. */
-  titulo_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Any other value that exists and is not equal to the given value. */
-  titulo_not?: InputMaybe<Scalars['String']['input']>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
   /** All values not containing the given string. */
-  titulo_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
   /** All values not ending with the given string */
-  titulo_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  title_not_ends_with?: InputMaybe<Scalars['String']['input']>;
   /** All values that are not contained in given list. */
-  titulo_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** All values not starting with the given string. */
-  titulo_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  title_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   /** All values starting with the given string. */
-  titulo_starts_with?: InputMaybe<Scalars['String']['input']>;
+  title_starts_with?: InputMaybe<Scalars['String']['input']>;
+  video?: InputMaybe<AssetWhereInput>;
 };
 
 /** References Hero record uniquely */
@@ -6497,7 +6497,7 @@ export type PageQueryVariables = Exact<{
 }>;
 
 
-export type PageQuery = { __typename?: 'Query', pagina?: { __typename?: 'Pagina', hero?: { __typename?: 'Hero', titulo: string, texto?: string | null, image: { __typename?: 'Asset', url: string }, buttons: Array<{ __typename?: 'Button', text: string, url: string, variant: ButtonVariant }> } | null } | null };
+export type PageQuery = { __typename?: 'Query', pagina?: { __typename?: 'Pagina', hero?: { __typename?: 'Hero', title: string, text?: string | null, buttons: Array<{ __typename?: 'Button', text: string, url: string, variant: ButtonVariant }>, video: { __typename?: 'Asset', url: string } } | null } | null };
 
 export type TextPageQueryVariables = Exact<{
   slug: Scalars['String']['input'];
@@ -6507,5 +6507,5 @@ export type TextPageQueryVariables = Exact<{
 export type TextPageQuery = { __typename?: 'Query', textPage?: { __typename?: 'TextPage', text: { __typename?: 'RichText', html: string } } | null };
 
 
-export const PageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Page"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pagina"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"titulo"}},{"kind":"Field","name":{"kind":"Name","value":"texto"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"buttons"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"variant"}}]}}]}}]}}]}}]} as unknown as DocumentNode<PageQuery, PageQueryVariables>;
+export const PageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Page"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pagina"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"hero"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"buttons"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"variant"}}]}},{"kind":"Field","name":{"kind":"Name","value":"video"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<PageQuery, PageQueryVariables>;
 export const TextPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"TextPage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"textPage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"html"}}]}}]}}]}}]} as unknown as DocumentNode<TextPageQuery, TextPageQueryVariables>;

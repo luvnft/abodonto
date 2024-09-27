@@ -1,15 +1,15 @@
 query Page($slug: String!) {
   pagina(where: { slug: $slug }) {
     hero {
-      titulo
-      texto
-      image {
-        url
-      }
+      title
+      text
       buttons {
         text
         url
         variant
+      }
+      video {
+        url
       }
     }
   }
