@@ -16,6 +16,7 @@ import {
   Star,
 } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default async function HomePage() {
   const { data } = await client.query<{ pagina: Pagina }>({
@@ -79,7 +80,9 @@ export default async function HomePage() {
                   <li>• Melhora a fala e a capacidade de mastigação</li>
                   <li>• Aprimora a estrutura facial</li>
                 </ul>
-                <Button className="w-fit">Saiba Mais Sobre Implantes</Button>
+                <Link href="https://wa.me/5544997381613?text=Olá, gostaria de saber mais sobre implantes">
+                  <Button className="w-fit">Saiba Mais Sobre Implantes</Button>
+                </Link>
               </div>
             </LazyLoaderObserver>
           </div>
@@ -110,7 +113,9 @@ export default async function HomePage() {
                   <li>• Resultados com aparência natural</li>
                   <li>• Resistente a manchas e duradouro</li>
                 </ul>
-                <Button className="w-fit">Descubra as Facetas</Button>
+                <Link href="https://wa.me/5544997381613?text=Olá, gostaria de saber mais sobre facetas">
+                  <Button className="w-fit">Descubra as Facetas</Button>
+                </Link>
               </div>
             </LazyLoaderObserver>
             <Image
@@ -155,7 +160,11 @@ export default async function HomePage() {
                   <li>• Planos de tratamento personalizados</li>
                   <li>• Efeitos duradouros com cuidados adequados</li>
                 </ul>
-                <Button className="w-fit">Explore o Clareamento Dental</Button>
+                <Link href="https://wa.me/5544997381613?text=Olá, gostaria de saber mais sobre clareamento dental">
+                  <Button className="w-fit">
+                    Explore o Clareamento Dental
+                  </Button>
+                </Link>
               </div>
             </LazyLoaderObserver>
           </div>
@@ -186,7 +195,9 @@ export default async function HomePage() {
                   <li>• Melhora a estética geral do sorriso</li>
                   <li>• Técnica minimamente invasiva</li>
                 </ul>
-                <Button className="w-fit">Conheça a Gengivoplastia</Button>
+                <Link href="https://wa.me/5544997381613?text=Olá, gostaria de saber mais sobre gengivoplastia">
+                  <Button className="w-fit">Conheça a Gengivoplastia</Button>
+                </Link>
               </div>
             </LazyLoaderObserver>
             <Image
