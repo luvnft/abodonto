@@ -1,12 +1,10 @@
 import Hero from '@/components/hero';
 import LazyLoaderObserver from '@/components/ui/LazyLoadObserver';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import client from '@/graphql/client';
 import { Pagina } from '@/graphql/gql/graphql';
 import pageQuery from '@/graphql/queries/page.graphql';
 import {
-  ChevronRight,
   Clock,
   DrillIcon,
   Scissors,
