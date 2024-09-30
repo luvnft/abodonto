@@ -120,7 +120,7 @@ export default async function HomePage() {
             </LazyLoaderObserver>
             <Image
               alt="Antes e depois de facetas dentárias"
-              className="rounded-xl w-full max-w-[400px] aspect-square object-cover"
+              className="rounded-xl w-full max-w-[400px] aspect-square object-cover order-first md:order-last"
               height="400"
               src="/faceta.jpg"
               width="400"
@@ -202,7 +202,7 @@ export default async function HomePage() {
             </LazyLoaderObserver>
             <Image
               alt="Procedimento de gengivoplastia"
-              className="rounded-xl w-full max-w-[400px] aspect-square object-cover"
+              className="rounded-xl w-full max-w-[400px] aspect-square object-cover order-first md:order-last"
               width="400"
               height="400"
               src="/gengivoplastia.jpg"
