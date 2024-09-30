@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 
 export default function HeroComponent({ hero }: { hero: Hero }) {
   return (
-    <section className="w-full h-screen flex items-end justify-center text-white">
+    <section className="relative w-full h-screen flex items-end justify-center text-white">
       <video
         className="h-full w-full object-cover"
         src={hero.video.url}
