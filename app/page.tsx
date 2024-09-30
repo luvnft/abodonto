@@ -53,7 +53,7 @@ export default async function HomePage() {
           <div className="grid gap-6 md:grid-cols-2 md:gap-12 items-center justify-items-center">
             <Image
               alt="Procedimento de implante dentário"
-              className="rounded-xl w-full max-w-[400px] aspect-square object-cover"
+              className="rounded-xl w-full md:max-w-[400px] aspect-square object-cover"
               height="400"
               src="/implantes.jpg"
               width="400"
@@ -120,7 +120,7 @@ export default async function HomePage() {
             </LazyLoaderObserver>
             <Image
               alt="Antes e depois de facetas dentárias"
-              className="rounded-xl w-full max-w-[400px] aspect-square object-cover order-first md:order-last"
+              className="rounded-xl w-full md:max-w-[400px] aspect-square object-cover order-first md:order-last"
               height="400"
               src="/faceta.jpg"
               width="400"
@@ -133,7 +133,7 @@ export default async function HomePage() {
           <div className="grid gap-6  md:grid-cols-2 md:gap-12 items-center justify-items-center">
             <Image
               alt="Procedimento de clareamento dental"
-              className="rounded-xl w-full max-w-[400px] aspect-square object-cover"
+              className="rounded-xl w-full md:max-w-[400px] aspect-square object-cover"
               height="400"
               src="/clareamento.jpg"
               width="400"
@@ -202,7 +202,7 @@ export default async function HomePage() {
             </LazyLoaderObserver>
             <Image
               alt="Procedimento de gengivoplastia"
-              className="rounded-xl w-full max-w-[400px] aspect-square object-cover order-first md:order-last"
+              className="rounded-xl w-full md:max-w-[400px] aspect-square object-cover order-first md:order-last"
               width="400"
               height="400"
               src="/gengivoplastia.jpg"
