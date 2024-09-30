@@ -78,8 +78,13 @@ export default async function HomePage() {
                   <li>• Melhora a fala e a capacidade de mastigação</li>
                   <li>• Aprimora a estrutura facial</li>
                 </ul>
-                <Link href="https://wa.me/5544997381613?text=Olá, gostaria de saber mais sobre implantes">
-                  <Button className="w-fit">Saiba Mais Sobre Implantes</Button>
+                <Link
+                  href="https://wa.me/5544997381613?text=Olá, gostaria de saber mais sobre implantes"
+                  className="flex justify-center sm:justify-start"
+                >
+                  <Button className="w-full sm:w-fit max-w-sm">
+                    Saiba Mais Sobre Implantes
+                  </Button>
                 </Link>
               </div>
             </LazyLoaderObserver>
@@ -111,8 +116,13 @@ export default async function HomePage() {
                   <li>• Resultados com aparência natural</li>
                   <li>• Resistente a manchas e duradouro</li>
                 </ul>
-                <Link href="https://wa.me/5544997381613?text=Olá, gostaria de saber mais sobre facetas">
-                  <Button className="w-fit">Descubra as Facetas</Button>
+                <Link
+                  href="https://wa.me/5544997381613?text=Olá, gostaria de saber mais sobre facetas"
+                  className="flex justify-center sm:justify-start"
+                >
+                  <Button className="w-full sm:w-fit max-w-sm">
+                    Descubra as Facetas
+                  </Button>
                 </Link>
               </div>
             </LazyLoaderObserver>
@@ -158,8 +168,11 @@ export default async function HomePage() {
                   <li>• Planos de tratamento personalizados</li>
                   <li>• Efeitos duradouros com cuidados adequados</li>
                 </ul>
-                <Link href="https://wa.me/5544997381613?text=Olá, gostaria de saber mais sobre clareamento dental">
-                  <Button className="w-fit">
+                <Link
+                  href="https://wa.me/5544997381613?text=Olá, gostaria de saber mais sobre clareamento dental"
+                  className="flex justify-center sm:justify-start"
+                >
+                  <Button className="w-full sm:w-fit max-w-sm">
                     Explore o Clareamento Dental
                   </Button>
                 </Link>
@@ -193,8 +206,13 @@ export default async function HomePage() {
                   <li>• Melhora a estética geral do sorriso</li>
                   <li>• Técnica minimamente invasiva</li>
                 </ul>
-                <Link href="https://wa.me/5544997381613?text=Olá, gostaria de saber mais sobre gengivoplastia">
-                  <Button className="w-fit">Conheça a Gengivoplastia</Button>
+                <Link
+                  href="https://wa.me/5544997381613?text=Olá, gostaria de saber mais sobre gengivoplastia"
+                  className="flex justify-center sm:justify-start"
+                >
+                  <Button className="w-full sm:w-fit max-w-sm">
+                    Conheça a Gengivoplastia
+                  </Button>
                 </Link>
               </div>
             </LazyLoaderObserver>
@@ -314,11 +332,14 @@ export default async function HomePage() {
               sorriso mais saudável e confiante.
             </p>
           </div>
-          <div className="mx-auto w-full max-w-sm space-y-2">
-            <Link href="https://wa.me/5544997381613?text=Olá, gostaria de agendar uma consulta">
-              <Button type="submit">Agendar consulta</Button>
-            </Link>
-          </div>
+          <Link
+            href="https://wa.me/5544997381613?text=Olá, gostaria de agendar uma consulta"
+            className="flex justify-center"
+          >
+            <Button className="w-full sm:w-fit max-w-sm" type="submit">
+              Agendar consulta
+            </Button>
+          </Link>
         </div>
       </section>
     </main>
